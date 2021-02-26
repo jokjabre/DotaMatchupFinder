@@ -1,0 +1,29 @@
+﻿<select class="dropdown" @bind="@model.Hero">
+    @foreach (var hero in HeroMappings.GetHeroesMap())
+    {
+        <option value="@hero.NameEnum">@hero.Name</option>
+    }
+</select>
+
+<select @bind="@model.Opponent">
+    @foreach (var hero in HeroMappings.GetHeroesMap())
+    {
+        <option value="@hero.NameEnum">@hero.Name</option>
+    }
+</select>
+
+<button @onclick="ExecuteSearch">Search</button>
+
+
+@code {
+
+    KnownSearchModel model = new KnownSearchModel();
+
+    [Parameter]
+    public EventCallback<KnownSearchModel> OnSearch { get; set; }
+
+    async Task ExecuteSearch()
+    {
+        await OnSearch.InvokeAsync(model);
+    }
+}

@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30223.230
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotaMatchupFinder.Core", "DotaMatchupFinder.Core\DotaMatchupFinder.Core.csproj", "{9DEDBEB4-8E59-413B-B02D-E38FE1C84D1C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotaMatchupFinder.POC", "DotaMatchupFinder.POC\DotaMatchupFinder.POC.csproj", "{D33DFD28-62BB-4680-967F-4D50227F5F8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotaMatchupFinder", "DotaMatchupFinder\DotaMatchupFinder.csproj", "{32DC0086-850B-4B8C-AF6D-12A837F4D85E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9DEDBEB4-8E59-413B-B02D-E38FE1C84D1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DEDBEB4-8E59-413B-B02D-E38FE1C84D1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DEDBEB4-8E59-413B-B02D-E38FE1C84D1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DEDBEB4-8E59-413B-B02D-E38FE1C84D1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D33DFD28-62BB-4680-967F-4D50227F5F8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D33DFD28-62BB-4680-967F-4D50227F5F8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D33DFD28-62BB-4680-967F-4D50227F5F8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D33DFD28-62BB-4680-967F-4D50227F5F8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32DC0086-850B-4B8C-AF6D-12A837F4D85E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32DC0086-850B-4B8C-AF6D-12A837F4D85E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32DC0086-850B-4B8C-AF6D-12A837F4D85E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32DC0086-850B-4B8C-AF6D-12A837F4D85E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F8CB6F87-793B-4E12-957E-9844565FDA9D}
+	EndGlobalSection
+EndGlobal

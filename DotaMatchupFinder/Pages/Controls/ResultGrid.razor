@@ -1,0 +1,34 @@
+﻿@if (Items?.Count > 0)
+{
+<h3>Matchups</h3>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <td>Match id</td>
+                <td>Hero name</td>
+                <td>Opponent name</td>
+                <td>Victory</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var res in Items)
+            {
+                <tr>
+                    <td>@res.MatchId</td>
+                    <td>@res.HeroName</td>
+                    <td>@res.OpponentName</td>
+                    <td>@res.Win</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+
+    [Parameter]
+    public List<BasicResultModel> Items { get; set; }
+
+
+}

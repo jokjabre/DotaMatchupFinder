@@ -1,0 +1,20 @@
+﻿
+
+<MatchupSelector OnSearch="ExecuteSearch"></MatchupSelector>
+
+<div class="container-fluid">
+    <ResultGrid Items="searchResult"></ResultGrid>
+
+</div>
+
+
+@code {
+
+
+    List<BasicResultModel> searchResult = new List<BasicResultModel>();
+
+    async Task ExecuteSearch(KnownSearchModel model)
+    {
+        searchResult = await KnownSearches.LaneMatchup(model);
+    }
+}
