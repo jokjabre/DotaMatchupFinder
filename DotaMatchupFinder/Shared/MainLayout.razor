@@ -1,10 +1,28 @@
 ﻿@inherits LayoutComponentBase
 
 
-<div class="main">
+    <div class="main">
 
-
-    <div class="content px-4">
-        @Body
+        <MatThemeProvider Theme="@theme2">
+            <div class="mat-blazor-demo-theme-app-row">
+                <div class="content px-4">
+                    @Body
+                </div>
+            </div>
+        </MatThemeProvider>
     </div>
-</div>
+@code {
+
+
+    MatTheme theme1 = new MatTheme()
+    {
+        Primary = MatThemeColors.Orange._500.Value,
+        Secondary = MatThemeColors.BlueGrey._500.Value
+    };
+
+    MatTheme theme2 = new MatTheme()
+    {
+        Primary = "green",
+        Secondary = "orange"
+    };
+}

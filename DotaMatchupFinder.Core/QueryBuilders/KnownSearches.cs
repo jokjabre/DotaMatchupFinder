@@ -10,8 +10,11 @@ namespace DotaMatchupFinder.Core.QueryBuilders
 {
     public class KnownSearches
     {
-        public static async Task<List<BasicResultModel>> LaneMatchup(HeroEnum hero, HeroEnum opponent, int limit = 10, int tier = 10)
+        public static async Task<List<BasicResultModel>> LaneMatchup(HeroEnum hero, HeroEnum opponent, int limit = 10, int tier = 60)
         {
+            if (limit < 0) limit = 10;
+            if (tier < 0) tier = 60;
+
             string query =
                 $@"
 SELECT    
@@ -33,6 +36,8 @@ AND ((public_player_matches.player_slot < 128 AND second_player.player_slot > 12
 ORDER BY public_matches.match_id DESC
 LIMIT {limit}
 ";
+
+            
 
             return await (new JsonParser().ParseQuery<BasicResultModel>(query));
         }

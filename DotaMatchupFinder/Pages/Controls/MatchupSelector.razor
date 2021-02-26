@@ -1,19 +1,39 @@
-﻿<select class="dropdown" @bind="@model.Hero">
-    @foreach (var hero in HeroMappings.GetHeroesMap())
-    {
-        <option value="@hero.NameEnum">@hero.Name</option>
-    }
-</select>
+﻿
+<div class="mat-layout-grid">
 
-<select @bind="@model.Opponent">
-    @foreach (var hero in HeroMappings.GetHeroesMap())
-    {
-        <option value="@hero.NameEnum">@hero.Name</option>
-    }
-</select>
+    <div class="mat-layout-grid-inner">
 
-<button @onclick="ExecuteSearch">Search</button>
+        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-3">
+            <MatSelectValue @bind-Value="@model.Hero" Items="@HeroMappings.GetHeroesMap()"
+                            ValueSelector="@(i=>i.NameEnum)" FullWidth="true">
+                <ItemTemplate>
+                    <span>@context?.Name</span>
+                </ItemTemplate>
+            </MatSelectValue>
+        </div>
 
+        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-3">
+            <MatSelectValue @bind-Value="@model.Opponent" Items="@HeroMappings.GetHeroesMap()"
+                            ValueSelector="@(i=>i.NameEnum)" FullWidth="true">
+                <ItemTemplate>
+                    <span>@context?.Name</span>
+                </ItemTemplate>
+            </MatSelectValue>
+        </div>
+
+        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-1">
+            <MatNumericUpDownField Label="Rows to read" @bind-Value="@model.Limit" />
+        </div>
+
+        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-1">
+            <MatNumericUpDownField Label="MMR Tier" @bind-Value="@model.Tier" />
+        </div>
+
+        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-2">
+            <MatButton Raised="true" Outlined="true" OnClick="ExecuteSearch" Style="height:86%">Search</MatButton>
+        </div>
+    </div>
+</div>
 
 @code {
 
