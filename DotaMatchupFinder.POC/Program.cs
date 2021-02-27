@@ -19,7 +19,7 @@ namespace DotaMatchupFinder.POC
     {
         static void Main(string[] args)
         {
-            Hero hero = null;
+            HeroModel hero = null;
             while (hero == null)
             {
                 Console.Write("Insert hero name:");
@@ -27,7 +27,7 @@ namespace DotaMatchupFinder.POC
                 hero = HeroMappings.FindHeroByName(txt);
             }
 
-            Hero opp = null;
+            HeroModel opp = null;
             while (opp == null)
             {
                 Console.Write("Insert opponent name:");
@@ -39,7 +39,9 @@ namespace DotaMatchupFinder.POC
             Console.WriteLine();
             Console.WriteLine("Result:");
             Console.WriteLine(string.Format("{0,-12} {1,-22} {2,-22} {3,-5}", "Match id", "Hero", "Opponent", "Result"));
-            var result = KnownSearches.LaneMatchup(hero.NameEnum, opp.NameEnum, 20, 90).Result;
+
+            KnownSearchModel model = new KnownSearchModel() { Hero = hero.NameEnum, Opponent = opp.NameEnum };
+            var result = KnownSearches.LaneMatchup(model).Result;
 
             foreach(var res in result)
             {

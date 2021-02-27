@@ -19,7 +19,7 @@ namespace DotaMatchupFinder.Core.Parsers
                 var wrapper = JsonConvert.DeserializeObject<BasicModelWrapper<T>>(txtToParse);
                 return wrapper.rows;
             }
-            catch(Exception ex)
+            catch
             {
                 return default;
             }

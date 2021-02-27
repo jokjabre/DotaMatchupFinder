@@ -1,31 +1,33 @@
-﻿@if (Loading)
-{
-    <h3 class="mat-subtitle1">Loading</h3>
-    <MatProgressBar Indeterminate="true"></MatProgressBar>
-}
-else if(Items != null && Items.Count == 0)
-{
-    <h3>No results found</h3>
-}
-else if (Items?.Count > 0)
-{
-    <h3>Matchups</h3>
+﻿<div class="mat-layout-grid-cell mat-layout-grid-cell-span-12">
+    @if (Loading)
+    {
+        <h3 class="mat-subtitle1">Loading</h3>
+        <MatProgressBar Indeterminate="true"></MatProgressBar>
+    }
+    else if (Items != null && Items.Count == 0)
+    {
+        <h3>No results found</h3>
+    }
+    else if (Items?.Count > 0)
+    {
+        <h3>Matchups</h3>
 
-    <MatTable Items="Items" class="mat-elevation-z5 d-table" AllowSelection="true">
-        <MatTableHeader>
-            <td>Match id</td>
-            <td>Hero name</td>
-            <td>Opponent name</td>
-            <td>Victory</td>
-        </MatTableHeader>
-        <MatTableRow>
-            <td>@context.MatchId</td>
-            <td>@context.HeroName</td>
-            <td>@context.OpponentName</td>
-            <td>@context.Win</td>
-        </MatTableRow>
-    </MatTable>
-}
+        <MatTable Items="Items" class="mat-elevation-z5 d-table" AllowSelection="true">
+            <MatTableHeader>
+                <td>Match id</td>
+                <td>Hero name</td>
+                <td>Opponent name</td>
+                <td>Victory</td>
+            </MatTableHeader>
+            <MatTableRow>
+                <td>@context.MatchId</td>
+                <td>@context.HeroName</td>
+                <td>@context.OpponentName</td>
+                <td>@context.Win</td>
+            </MatTableRow>
+        </MatTable>
+    }
+</div>
 
 
 @code {

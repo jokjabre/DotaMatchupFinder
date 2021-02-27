@@ -5,8 +5,27 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="QueryBuilders\SearchBuilder.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="MatBlazor" Version="2.8.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Queries.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Queries.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Queries.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Queries.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>

@@ -1,11 +1,15 @@
 ﻿
+    <div class="mat-layout-grid-cell mat-layout-grid-cell-span-12">
+        <div class="mat-layout-grid-inner">
+            <MatchupSelector OnSearch="ExecuteSearch"></MatchupSelector>
+        </div>
+    </div>
 
-<MatchupSelector OnSearch="ExecuteSearch"></MatchupSelector>
-
-<div class="container-fluid">
-    <ResultGrid Items="searchResult" Loading="@loading"></ResultGrid>
-
-</div>
+    <div class="mat-layout-grid-cell mat-layout-grid-cell-span-12">
+        <div class="mat-layout-grid-inner">
+            <ResultGrid Items="searchResult" Loading="@loading"></ResultGrid>
+        </div>
+    </div>
 
 
 @code {

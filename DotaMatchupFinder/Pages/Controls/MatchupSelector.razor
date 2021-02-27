@@ -1,39 +1,35 @@
 ﻿
-<div class="mat-layout-grid">
 
-    <div class="mat-layout-grid-inner">
-
-        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-3">
-            <MatSelectValue @bind-Value="@model.Hero" Items="@HeroMappings.GetHeroesMap()"
-                            ValueSelector="@(i=>i.NameEnum)" FullWidth="true">
-                <ItemTemplate>
-                    <span>@context?.Name</span>
-                </ItemTemplate>
-            </MatSelectValue>
-        </div>
-
-        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-3">
-            <MatSelectValue @bind-Value="@model.Opponent" Items="@HeroMappings.GetHeroesMap()"
-                            ValueSelector="@(i=>i.NameEnum)" FullWidth="true">
-                <ItemTemplate>
-                    <span>@context?.Name</span>
-                </ItemTemplate>
-            </MatSelectValue>
-        </div>
-
-        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-1">
-            <MatNumericUpDownField Label="Rows to read" @bind-Value="@model.Limit" />
-        </div>
-
-        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-1">
-            <MatNumericUpDownField Label="MMR Tier" @bind-Value="@model.Tier" />
-        </div>
-
-        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-2">
-            <MatButton Raised="true" Outlined="true" OnClick="ExecuteSearch" Style="height:86%">Search</MatButton>
-        </div>
-    </div>
+<div class="mat-layout-grid-cell mat-layout-grid-cell-span-2">
+    <MatSelectValue @bind-Value="@model.Hero" Items="@HeroMappings.GetHeroesMap()"
+                    ValueSelector="@(i=>i.NameEnum)" FullWidth="true">
+        <ItemTemplate>
+            <span>@context?.Name</span>
+        </ItemTemplate>
+    </MatSelectValue>
 </div>
+
+<div class="mat-layout-grid-cell mat-layout-grid-cell-span-2">
+    <MatSelectValue @bind-Value="@model.Opponent" Items="@HeroMappings.GetHeroesMap()"
+                    ValueSelector="@(i=>i.NameEnum)" FullWidth="true">
+        <ItemTemplate>
+            <span>@context?.Name</span>
+        </ItemTemplate>
+    </MatSelectValue>
+</div>
+
+<div class="mat-layout-grid-cell mat-layout-grid-cell-span-1">
+    <MatNumericUpDownField Label="Rows" @bind-Value="@model.Limit" />
+</div>
+
+<div class="mat-layout-grid-cell mat-layout-grid-cell-span-1">
+    <MatNumericUpDownField Label="MMR Tier" @bind-Value="@model.Tier" />
+</div>
+
+<div class="mat-layout-grid-cell mat-layout-grid-cell-span-2">
+    <MatButton Raised="true" Outlined="true" OnClick="ExecuteSearch" Style="height:86%">Search</MatButton>
+</div>
+
 
 @code {
 

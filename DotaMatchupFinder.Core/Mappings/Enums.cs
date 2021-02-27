@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DotaMatchupFinder.Core.Mappings
 {
-    public enum HeroEnum
+    public enum Heroes
     {
         Anti_Mage,
         Axe,
