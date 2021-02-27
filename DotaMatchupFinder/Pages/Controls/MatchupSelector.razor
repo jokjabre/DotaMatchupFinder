@@ -1,7 +1,7 @@
 ﻿
 
 <div class="mat-layout-grid-cell mat-layout-grid-cell-span-2">
-    <MatSelectValue @bind-Value="@model.Hero" Items="@HeroMappings.GetHeroesMap()"
+    <MatSelectValue @bind-Value="@model.Hero" Items="@GetSortedHeroes()"
                     ValueSelector="@(i=>i.NameEnum)" FullWidth="true">
         <ItemTemplate>
             <span>@context?.Name</span>
@@ -10,7 +10,7 @@
 </div>
 
 <div class="mat-layout-grid-cell mat-layout-grid-cell-span-2">
-    <MatSelectValue @bind-Value="@model.Opponent" Items="@HeroMappings.GetHeroesMap()"
+    <MatSelectValue @bind-Value="@model.Opponent" Items="@GetSortedHeroes()"
                     ValueSelector="@(i=>i.NameEnum)" FullWidth="true">
         <ItemTemplate>
             <span>@context?.Name</span>
@@ -34,6 +34,7 @@
 @code {
 
     KnownSearchModel model = new KnownSearchModel();
+    List<HeroModel> heroes;
 
     [Parameter]
     public EventCallback<KnownSearchModel> OnSearch { get; set; }
@@ -41,5 +42,10 @@
     async Task ExecuteSearch()
     {
         await OnSearch.InvokeAsync(model);
+    }
+
+    List<HeroModel> GetSortedHeroes()
+    {
+        return heroes ?? (heroes = HeroMappings.GetHeroesMap().OrderBy(h => h.Name).ToList());
     }
 }
