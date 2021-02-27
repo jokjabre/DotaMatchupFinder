@@ -1,4 +1,13 @@
-﻿@if (Items?.Count > 0)
+﻿@if (Loading)
+{
+    <h3 class="mat-subtitle1">Loading</h3>
+    <MatProgressBar Indeterminate="true"></MatProgressBar>
+}
+else if(Items != null && Items.Count == 0)
+{
+    <h3>No results found</h3>
+}
+else if (Items?.Count > 0)
 {
     <h3>Matchups</h3>
 
@@ -18,9 +27,12 @@
     </MatTable>
 }
 
+
 @code {
 
     [Parameter]
     public List<BasicResultModel> Items { get; set; }
 
+    [Parameter]
+    public bool Loading { get; set; }
 }
