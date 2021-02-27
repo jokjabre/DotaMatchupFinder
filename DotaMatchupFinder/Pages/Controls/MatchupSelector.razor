@@ -46,6 +46,10 @@
 
     List<HeroModel> GetSortedHeroes()
     {
-        return heroes ?? (heroes = HeroMappings.GetHeroesMap().OrderBy(h => h.Name).ToList());
+        if(heroes == null)
+        {
+            heroes = HeroMappings.GetHeroesMap().OrderBy(h => h.Name).ToList();
+        }
+        return heroes;
     }
 }
